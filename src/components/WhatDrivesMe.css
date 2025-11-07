@@ -1,0 +1,94 @@
+.what-drives-me-section {
+  min-height: 100vh;
+  padding: 120px 0 80px;
+  background: var(--bg-alt);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.what-drives-me-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.drives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 4rem;
+}
+
+.drive-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.what-drives-me-section.visible .drive-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.drive-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+}
+
+.drive-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.drive-card:hover .drive-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.drive-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.drive-description {
+  color: var(--text-light);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .drives-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .drive-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .drive-icon {
+    font-size: 2.5rem;
+  }
+}
+
+
+
+
