@@ -23,13 +23,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #ffffff;
   background: #232F3E;
-  background-attachment: fixed;
   min-height: 100vh;
   line-height: 1.6;
   overflow-x: hidden;
 }
 
 html {
+  background: #232F3E;
   scroll-behavior: smooth;
 }
 

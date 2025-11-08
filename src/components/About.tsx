@@ -38,13 +38,6 @@ const About = () => {
 
   return (
     <section id="about" ref={sectionRef} className={`about-section ${isVisible ? 'visible' : ''}`}>
-      <div className="about-clouds">
-        <div className="about-cloud about-cloud-1">☁️</div>
-        <div className="about-cloud about-cloud-2">☁️</div>
-        <div className="about-cloud about-cloud-3">☁️</div>
-        <div className="about-cloud about-cloud-4">☁️</div>
-        <div className="about-cloud about-cloud-5">☁️</div>
-      </div>
       <div className="container">
         <h2 className="section-title">
           About Me<span className="accent-dot">.</span>

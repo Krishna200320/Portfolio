@@ -1,7 +1,6 @@
 .what-drives-me-section {
   min-height: 100vh;
   padding: 120px 0 80px;
-  background: var(--bg-alt);
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease;
