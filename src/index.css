@@ -21,8 +21,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--text);
-  background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 20%, #bfdbfe 40%, #a5b4fc 60%, #c7d2fe 80%, #e9d5ff 100%);
+  color: #ffffff;
+  background: #232F3E;
   background-attachment: fixed;
   min-height: 100vh;
   line-height: 1.6;

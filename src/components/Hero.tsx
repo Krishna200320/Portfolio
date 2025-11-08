@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { heroData } from '../data'
+import Sparkles from './Sparkles'
 import './Hero.css'
 
 const Hero = () => {
@@ -21,7 +22,16 @@ const Hero = () => {
       <div className="hero-background"></div>
       <div className="hero-container">
         <div className="hero-content">
-          <h1 className="hero-name">{heroData.name}</h1>
+          <div className="hero-name-container">
+            <h1 className="hero-name">{heroData.name}</h1>
+            <Sparkles
+              particleColor="#FF9900"
+              minSize={0.6}
+              maxSize={1.4}
+              particleDensity={100}
+              speed={1}
+            />
+          </div>
           <p className="hero-title">{heroData.title}</p>
           <p className="hero-subtitle">{heroData.subtitle}</p>
           <p className="hero-location">📍 {heroData.location}</p>
@@ -36,6 +46,8 @@ const Hero = () => {
         <div className="cloud cloud-2">☁️</div>
         <div className="cloud cloud-3">☁️</div>
         <div className="cloud cloud-4">☁️</div>
+        <div className="cloud cloud-5">☁️</div>
+        <div className="cloud cloud-6">☁️</div>
       </div>
     </section>
   )

@@ -16,56 +16,33 @@
   bottom: 0;
   z-index: 0;
   pointer-events: none;
+  background: radial-gradient(ellipse at top, rgba(255, 153, 0, 0.1) 0%, transparent 50%),
+              radial-gradient(ellipse at bottom right, rgba(37, 99, 235, 0.08) 0%, transparent 50%);
 }
 
 .hero-background::before {
-  content: '☁️';
-  position: absolute;
-  font-size: 18rem;
-  top: 5%;
-  left: 5%;
-  opacity: 0.6;
-  animation: floatCloud1 20s ease-in-out infinite;
-  z-index: 1;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-}
-
-.hero-background::after {
-  content: '☁️';
-  position: absolute;
-  font-size: 15rem;
-  top: 20%;
-  right: 8%;
-  opacity: 0.7;
-  animation: floatCloud2 25s ease-in-out infinite;
-  z-index: 1;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-}
-
-@keyframes floatCloud1 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(50px, 30px) scale(1.1);
-  }
-}
-
-@keyframes floatCloud2 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(-40px, 40px) scale(1.15);
-  }
-}
-
-.cloud-container {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  background-image: 
+    linear-gradient(30deg, rgba(255, 255, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.03) 87.5%, rgba(255, 255, 255, 0.03)),
+    linear-gradient(150deg, rgba(255, 255, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.03) 87.5%, rgba(255, 255, 255, 0.03)),
+    linear-gradient(30deg, rgba(255, 255, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.03) 87.5%, rgba(255, 255, 255, 0.03)),
+    linear-gradient(150deg, rgba(255, 255, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.03) 87.5%, rgba(255, 255, 255, 0.03));
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+  opacity: 0.5;
+}
+
+.cloud-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 1;
   pointer-events: none;
   overflow: hidden;
@@ -74,59 +51,73 @@
 .cloud {
   position: absolute;
   font-size: 8rem;
-  opacity: 0.5;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
-  animation: floatCloud 30s ease-in-out infinite;
+  opacity: 0.15;
+  filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.1));
+  white-space: nowrap;
 }
 
 .cloud-1 {
   top: 10%;
-  left: 10%;
+  left: -200px;
   font-size: 10rem;
-  animation-delay: 0s;
-  animation-duration: 25s;
+  animation: moveCloudRight 40s linear infinite;
 }
 
 .cloud-2 {
-  top: 30%;
-  right: 15%;
+  top: 25%;
+  right: -200px;
   font-size: 9rem;
-  animation-delay: -5s;
-  animation-duration: 30s;
+  animation: moveCloudLeft 45s linear infinite;
+  animation-delay: -10s;
 }
 
 .cloud-3 {
-  bottom: 20%;
-  left: 20%;
+  top: 45%;
+  left: -250px;
   font-size: 8rem;
-  animation-delay: -10s;
-  animation-duration: 28s;
+  animation: moveCloudRight 50s linear infinite;
+  animation-delay: -20s;
 }
 
 .cloud-4 {
-  bottom: 30%;
-  right: 10%;
+  top: 65%;
+  right: -200px;
   font-size: 7rem;
-  animation-delay: -15s;
-  animation-duration: 32s;
+  animation: moveCloudLeft 35s linear infinite;
+  animation-delay: -5s;
 }
 
-@keyframes floatCloud {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.5;
+.cloud-5 {
+  top: 80%;
+  left: -300px;
+  font-size: 9rem;
+  animation: moveCloudRight 55s linear infinite;
+  animation-delay: -30s;
+}
+
+.cloud-6 {
+  top: 5%;
+  right: -250px;
+  font-size: 6rem;
+  animation: moveCloudLeft 42s linear infinite;
+  animation-delay: -15s;
+}
+
+@keyframes moveCloudRight {
+  0% {
+    transform: translateX(-100px);
   }
-  25% {
-    transform: translate(30px, -20px) scale(1.05);
-    opacity: 0.6;
+  100% {
+    transform: translateX(calc(100vw + 300px));
   }
-  50% {
-    transform: translate(-20px, 30px) scale(1.1);
-    opacity: 0.7;
+}
+
+@keyframes moveCloudLeft {
+  0% {
+    transform: translateX(calc(100vw + 100px));
   }
-  75% {
-    transform: translate(20px, 20px) scale(1.05);
-    opacity: 0.6;
+  100% {
+    transform: translateX(-300px);
   }
 }
 
@@ -164,27 +155,36 @@
   transform: translateY(0);
 }
 
+.hero-name-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem 2rem 2rem;
+}
+
 .hero-name {
   font-size: 5rem;
   font-weight: 800;
-  color: var(--text);
-  margin-bottom: 1rem;
+  color: #ffffff;
   line-height: 1.1;
   letter-spacing: -0.02em;
   animation: fadeInUp 0.8s ease 0.2s both;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 20px rgba(255, 153, 0, 0.3);
 }
 
 .hero-title {
   font-size: 1.8rem;
   font-weight: 600;
-  color: var(--primary);
+  color: #FF9900;
   margin-bottom: 0.5rem;
   animation: fadeInUp 0.8s ease 0.4s both;
 }
 
 .hero-subtitle {
   font-size: 1.3rem;
-  color: var(--text-light);
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 1rem;
   max-width: 700px;
   margin-left: auto;
@@ -194,7 +194,7 @@
 
 .hero-location {
   font-size: 1.1rem;
-  color: var(--text-light);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 2.5rem;
   animation: fadeInUp 0.8s ease 0.8s both;
 }
@@ -249,6 +249,10 @@
 }
 
 @media (max-width: 768px) {
+  .hero-name-container {
+    margin-bottom: 1rem;
+  }
+
   .hero-name {
     font-size: 3rem;
   }
