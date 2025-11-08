@@ -83,60 +83,57 @@
   filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
 }
 
-.project-image-container {
-  position: relative;
-  width: 400px;
-  min-width: 400px;
-  height: 100%;
-  overflow: hidden;
-  background: var(--bg-alt);
-}
-
-.project-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover .project-image {
-  transform: scale(1.05);
-}
-
-.project-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(37, 99, 235, 0.9);
+.project-logo-container {
+  width: 240px;
+  min-width: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  background: var(--bg-alt);
+  border-right: 1px solid var(--border);
+  padding: 2.5rem 1.5rem;
 }
 
-.project-card:hover .project-overlay {
-  opacity: 1;
+.project-logo {
+  width: 160px;
+  height: 160px;
+  border-radius: 36px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-logo {
+  transform: scale(1.05);
+}
+
+.project-links {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .project-link {
   color: white;
   text-decoration: none;
   padding: 0.7rem 1.5rem;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
-  font-weight: 500;
+  border-radius: 999px;
+  font-weight: 600;
+  background: var(--primary);
+  border: 1px solid var(--primary);
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
 }
 
 .project-link:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
+  background: transparent;
+  color: var(--primary);
 }
 
 .project-content {
@@ -205,10 +202,11 @@
     flex-direction: column;
   }
 
-  .project-image-container {
+  .project-logo-container {
     width: 100%;
     min-width: 100%;
-    height: 300px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
   }
 }
 
@@ -221,12 +219,14 @@
     gap: 2rem;
   }
 
-  .project-image-container {
-    height: 250px;
-  }
-
   .project-content {
     padding: 1.5rem;
+  }
+
+  .project-logo {
+    width: 120px;
+    height: 120px;
+    font-size: 1.2rem;
   }
 
   .container {
