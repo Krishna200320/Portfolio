@@ -39,33 +39,15 @@ const Projects = () => {
               className="project-card"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="project-image-container">
-                <img
-                  src={project.imageUrl}
-                  alt={project.title}
-                  className="project-image"
-                />
-                <div className="project-overlay">
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link"
-                    >
-                      Live Demo
-                    </a>
-                  )}
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link"
-                    >
-                      GitHub
-                    </a>
-                  )}
+              <div className="project-logo-container">
+                <div
+                  className="project-logo"
+                  style={{
+                    backgroundColor: project.logo.background,
+                    color: project.logo.color,
+                  }}
+                >
+                  {project.logo.label}
                 </div>
               </div>
               <div className="project-content">
@@ -79,6 +61,30 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
+                {(project.liveUrl || project.githubUrl) && (
+                  <div className="project-links">
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
+                      >
+                        Live Demo
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
+                      >
+                        GitHub
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -89,4 +95,3 @@ const Projects = () => {
 }
 
 export default Projects
-

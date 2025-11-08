@@ -5,12 +5,18 @@ export interface Certificate {
   description: string
 }
 
+export interface ProjectLogo {
+  label: string
+  background: string
+  color: string
+}
+
 export interface Project {
   id: number
   title: string
   description: string
   technologies: string[]
-  imageUrl: string
+  logo: ProjectLogo
   liveUrl?: string
   githubUrl?: string
 }
@@ -86,7 +92,11 @@ export const projects: Project[] = [
     title: 'Portfolio Website on AWS',
     description: 'A fully automated, serverless portfolio website hosted on AWS using S3 for static hosting, CloudFront for global content delivery, Route 53 for DNS management, and ACM for SSL certificates. Implemented CI/CD pipeline with GitHub Actions for seamless deployments.',
     technologies: ['AWS S3', 'CloudFront', 'Route 53', 'ACM', 'GitHub Actions'],
-    imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop',
+    logo: {
+      label: 'AWS',
+      background: '#ff9900',
+      color: '#111827',
+    },
     liveUrl: '#',
     githubUrl: '#',
   },
@@ -95,7 +105,11 @@ export const projects: Project[] = [
     title: 'CI/CD Automation Pipeline',
     description: 'Developed a comprehensive CI/CD pipeline using AWS CLI and GitHub Actions to automate deployments, reduce manual intervention, and improve development workflow efficiency. Integrated automated testing and deployment notifications.',
     technologies: ['GitHub Actions', 'AWS CLI', 'Lambda', 'SNS', 'CloudWatch'],
-    imageUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop',
+    logo: {
+      label: 'CI/CD',
+      background: '#111827',
+      color: '#ffffff',
+    },
     liveUrl: '#',
     githubUrl: '#',
   },
@@ -104,7 +118,11 @@ export const projects: Project[] = [
     title: 'Monitoring & Alerting System',
     description: 'Built a robust monitoring and alerting system using CloudWatch, SNS, and Lambda functions. Enables proactive issue detection, automated notifications, and comprehensive system health monitoring across multiple AWS services.',
     technologies: ['CloudWatch', 'SNS', 'Lambda', 'Python', 'EventBridge'],
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    logo: {
+      label: 'Ops',
+      background: '#065f46',
+      color: '#e0f2f1',
+    },
     liveUrl: '#',
     githubUrl: '#',
   },
@@ -113,7 +131,11 @@ export const projects: Project[] = [
     title: 'Data Security Enhancement Platform',
     description: 'Implemented a comprehensive data security solution using AWS Macie for data discovery, Inspector for security assessments, and IAM policies for access control. Ensures compliance with security standards and protects sensitive information.',
     technologies: ['AWS Macie', 'Inspector', 'IAM', 'CloudTrail', 'GuardDuty'],
-    imageUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
+    logo: {
+      label: 'SecOps',
+      background: '#0f172a',
+      color: '#e2e8f0',
+    },
     liveUrl: '#',
     githubUrl: '#',
   },
