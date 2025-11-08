@@ -53,7 +53,7 @@ export const aboutData = {
   
   current: `Currently, I'm preparing for the AWS Solutions Architect – Associate certification, expanding my expertise in cloud architecture, VPC networking, and cost optimization. My diverse background in IT support, QA automation, and compliance has equipped me with leadership and analytical problem-solving skills that help bridge the gap between technical implementation and business goals.`,
   
-  profileImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+  profileImage: 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=640&h=640&fit=crop&crop=faces',
 }
 
 export const achievements: Achievement[] = [
